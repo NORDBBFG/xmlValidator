@@ -43,7 +43,6 @@ public class Validator {
             Matcher matcher = selfPattern.matcher(selfTagsGuts.get(i));
             Character firstChar = selfTagsGuts.get(i).toCharArray()[0];
 
-
             if (firstChar.equals(' '))
             {
                 result = "Invalid XML : Extra space <_";
@@ -110,34 +109,3 @@ public class Validator {
         return result;
     }
 }
-
-
-/* int massiveLength = tagsGuts.size();
-                int counter = 0;
-                do {
-                    for (int j = 0; j < massiveLength; j++) {
-                        counter = 0;
-                        String firstTage = tagsGuts.get(j);
-                        String secondTage;
-                        try {
-                            secondTage = tagsGuts.get(j + 1).replaceFirst("[/]", "");
-                        } catch (IndexOutOfBoundsException e){
-                            firstTage = tagsGuts.get(j-1);
-                            secondTage = tagsGuts.get(j).replaceFirst("[/]", "");
-                            if (Objects.equals(firstTage, secondTage)){
-                                tagsGuts.remove(j-1);
-                                tagsGuts.remove(j);
-                                counter++;
-                                massiveLength = massiveLength - 2;
-                            }
-                        }
-                        if (Objects.equals(firstTage, secondTage)){
-                            tagsGuts.remove(j);
-                            tagsGuts.remove(j);
-                            counter++;
-                            massiveLength = massiveLength - 2;
-                        }
-                    }
-                    if (massiveLength <= 0)
-                        break;
-                } while (counter !=0);*/
